@@ -1,37 +1,24 @@
 ## Welcome to springboot
 
-You can use the [editor on GitHub](https://github.com/wx19941125/springboot/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+需要说明的是SpringBoot依赖的JDK版本为1.8及以上。 （springboot配置Java与springboot配置maven）
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+好处，内置tomcat;maven项目;开箱即用，无需XML配置;
 
-### Markdown
+### idea 搭建springboot环境（参考：https://www.cnblogs.com/weizaibug/p/6657077.html）
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+@responseBody注解的作用是将controller的方法返回的对象通过适当的转换器转换为指定的格式之后，写入到response对象的body区，通常用来返回JSON数据或者
+是XML数据，需要注意的呢，在使用此注解之后不会再走试图处理器，而是直接将数据写入到输入流中，他的效果等同于通过response对象输出指定格式的数据。
 
-```markdown
-Syntax highlighted code block
+### springboot 配置+注解（参考：https://www.cnblogs.com/magicalSam/p/7189421.html;https://www.cnblogs.com/njqa/p/8177009.html）  
 
-# Header 1
-## Header 2
-### Header 3
+属性配置,自定义属性配置(在application.properties),其中，属性配置包括tomcaat配置、mysql数据源配置；自定义属性配置包括单个属性获取、多个属性获取、多环境配置;
 
-- Bulleted
-- List
+springboot注解;
 
-1. Numbered
-2. List
+### 数据库操作，事务管理 
 
-**Bold** and _Italic_ and `Code` text
+springboot数据库操作,模块包必须建立在启动类的包是平级或子级,否则无法自动建表;（https://blog.csdn.net/fzz19960915/article/details/72804098）; 
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/wx19941125/springboot/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+springbootJPA数据库操作;
+	
+springboot事务管理;@EnableTransactionManagement、@Transactional;
